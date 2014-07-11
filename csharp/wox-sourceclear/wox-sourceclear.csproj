@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A43A786-512A-4852-A523-30AA5772D5E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>woxsourceclear</RootNamespace>
+    <AssemblyName>wox-sourceclear</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="Easy.cs" />
+    <Compile Include="ObjectReader.cs" />
+    <Compile Include="ObjectWriter.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Serial.cs" />
+    <Compile Include="SimpleReader.cs" />
+    <Compile Include="SimpleWriter.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="TestArray.cs" />
+    <Compile Include="TestListCourses.cs" />
+    <Compile Include="TestMapCourses.cs" />
+    <Compile Include="TestMultiArray.cs" />
+    <Compile Include="TestReferences.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
