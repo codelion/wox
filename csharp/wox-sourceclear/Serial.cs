@@ -34,6 +34,8 @@ namespace wox.serial
         public const String LENGTH = "length";
         public const String ID = "id";
         public const String IDREF = "idref";
+        // added by codelion to fix deserilization in dot net  
+        public const String DOTNETTYPE = "dotnettype";
 
         // next is used to disambiguate shadowed fields
         public const String DECLARED = "declaredClass";

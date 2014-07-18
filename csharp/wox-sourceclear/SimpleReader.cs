@@ -45,6 +45,7 @@ namespace wox.serial
                 //System.out.println("it is a reference: " + xob.getAttributeValue(IDREF) );
                 //printMap();
                 //return map.get(xob.getAttributeValue(IDREF));
+                //Console.Out.WriteLine (xob.GetAttribute (IDREF));
                 return map[xob.GetAttribute(IDREF)];
             }
 
@@ -57,6 +58,7 @@ namespace wox.serial
             Object ob = null;
             String id = xob.GetAttribute(ID);
             //Console.Out.WriteLine("id: " + id);
+
             if (isPrimitiveArray(xob))
             {
                 //Console.Out.WriteLine("readPrimitiveArray: " + xob.GetAttribute(TYPE));
@@ -96,7 +98,7 @@ namespace wox.serial
                 ob = readObject(xob, id);
             }
             // now place the object in a collection for later reference
-            //System.out.println("ob: " + ob + ", id: " + id);
+            //Console.Out.WriteLine("ob: " + ob + ", id: " + id);
             return ob;
         }
 
@@ -515,9 +517,15 @@ namespace wox.serial
                     //Read the KEY object
                     Object myKey = read(xobSubTree);
                     //position the cursor in the VALUE object
-                    xobSubTree.Read();
+                    //fix by codelion
+                    //Object myValue = null;
+                    //if (xobSubTree.NodeType == XmlNodeType.Element) {
+                    //  xobSubTree.Read ();
+                    //  myValue = read(xobSubTree);
+                    //}
                     //Console.Out.WriteLine("type value: " + xobSubTree.GetAttribute(TYPE));
                     //Read the VALUE object
+                    xobSubTree.Read (); 
                     Object myValue = read(xobSubTree);
                     //Add the key and the value to the Hashtable
                     myHashtable.Add(myKey, myValue);                    
@@ -810,7 +818,9 @@ namespace wox.serial
                     }
                     else if (cSharpType.Equals(typeof(System.String)))
                     {
-                        return xob.GetAttribute(VALUE);
+                        Object ob = xob.GetAttribute(VALUE);
+                        map.Add(id, ob);  //codelion : add to map as well 
+                        return ob;
                     }
                     else
                     {
@@ -860,7 +870,9 @@ namespace wox.serial
 
                 //Class type = Class.forName(xob.getAttributeValue(TYPE));
                 //Console.Out.WriteLine("type: " + xob.GetAttribute(TYPE));
-                Type typeObject = Type.GetType(xob.GetAttribute(TYPE));
+                //Type typeObject = Type.GetType(xob.GetAttribute(TYPE));
+                // codelion: use dotnettype instead
+                Type typeObject = Type.GetType(xob.GetAttribute(DOTNETTYPE));  
                 //Console.Out.WriteLine("typeObject: " + typeObject);
                 //checking if the type is not null
                 if (typeObject == null)
@@ -947,7 +959,7 @@ namespace wox.serial
 
 
                 //////from here
-
+                //Console.Out.WriteLine(ob.ToString());
                 return ob;
             }
             catch (Exception e)

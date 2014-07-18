@@ -100,7 +100,7 @@ public class SimpleReader extends TypeMapping implements ObjectReader {
             ob = readArrayList(xob, id);
         }
         else if (isHashMap(xob)) {
-            System.out.println("readHashMap: " + xob.getAttributeValue(TYPE));
+            //System.out.println("readHashMap: " + xob.getAttributeValue(TYPE));
             ob = readHashMap(xob, id);
         }
         else if (Util.stringable(xob.getAttributeValue(TYPE))) {
@@ -535,7 +535,7 @@ public class SimpleReader extends TypeMapping implements ObjectReader {
      * @return A live object.
      */
     private Object readHashMap(Element xob, Object id) {
-        System.out.println("Reading a HashMap...");
+        //System.out.println("Reading a HashMap...");
         HashMap newHashMap = new HashMap();
         //get the Entry objects (children)
         List children = xob.getChildren();

@@ -127,6 +127,8 @@ namespace wox.serial
                     //Console.Out.WriteLine("it is another type of object..." + ob.GetType().ToString());
                     el.WriteStartElement(OBJECT);
                     el.WriteAttributeString(TYPE, ob.GetType().ToString());
+                    // fix by codelion below 
+                    el.WriteAttributeString(DOTNETTYPE, ob.GetType().AssemblyQualifiedName);
                     el.WriteAttributeString(ID, map[ob].ToString());
                     writeFields(ob, el);
                     el.WriteEndElement();
