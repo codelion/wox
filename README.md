@@ -5,6 +5,7 @@ WOX is an XML serializer for Java and C# objects
 (forked from http://woxserializer.sourceforge.net/)
 
 ### Features
+============
 
 Some of the WOX main features are listed below.
 
