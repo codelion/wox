@@ -1,3 +1,4 @@
 /java/target/
 /csharp/wox/bin/
 /csharp/wox/obj/
+*.userprefs
