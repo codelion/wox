@@ -1,0 +1,7 @@
+TARGET_CLASS,criterion,Coverage,Total_Goals,Covered_Goals
+wox.serial.Easy,BRANCH,1.0,3,3
+wox.serial.EncodeBase64,BRANCH,0.9487179487179487,39,37
+wox.serial.SimpleReader,BRANCH,0.08088235294117647,136,11
+wox.serial.TypeMapping,BRANCH,1.0,1,1
+wox.serial.Util,BRANCH,0.9791666666666666,48,47
+wox.serial.XMLUtil,BRANCH,1.0,11,11
