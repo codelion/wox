@@ -1,14 +1,12 @@
 /*
- * © Copyright 2015 -  SourceClear Inc
+ * © Copyright 2015 
  */
 
 package wox.serial.tests;
 
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
-import com.pholser.junit.quickcheck.generator.java.lang.StringGenerator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
-import java.util.List;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.jdom2.Element;
 
