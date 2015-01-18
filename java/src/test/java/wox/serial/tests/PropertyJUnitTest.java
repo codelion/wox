@@ -37,5 +37,6 @@ public class PropertyJUnitTest {
   
   @Theory public void testElement2String(@ForAll @From(ElementGenerator.class) Element e) throws Exception {
     String s = element2String(e);
+    Assert.assertNotNull(s);
   }
 }
