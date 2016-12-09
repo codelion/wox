@@ -2,3 +2,4 @@
 /csharp/wox/bin/
 /csharp/wox/obj/
 *.userprefs
+.idea
